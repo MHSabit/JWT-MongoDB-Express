@@ -1,0 +1,6 @@
+Details of the project :
+
+Node JS
+Express JS
+MongoDB
+JWT Token
