@@ -10,7 +10,8 @@ SignupController.signUp = async (req, res) => {
         const user = {
             name: req.body.name,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10)
+            password: bcrypt.hashSync(req.body.password, 10),
+            active: false
         }
 
         const existingUser = await UserModel.findOne({email: user.email});

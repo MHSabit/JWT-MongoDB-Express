@@ -8,6 +8,7 @@ const todoHandaler = require('./Routes/todoRoute');
 const userHandaler = require('./Routes/User');
 const connectDB = require('./server');
 const CheckLogin = require('./Middleware/CheckLogin');
+const ISActive = require('./Middleware/IsActive');
 
 
 const app = express();
@@ -23,7 +24,7 @@ app.get('/', (req, res)=>{
     res.send('Application is running test get end point');
 });
 
-app.use('/todo', CheckLogin, todoHandaler);
+app.use('/todo', CheckLogin, ISActive, todoHandaler);
 app.use('/user', userHandaler);
 
 
